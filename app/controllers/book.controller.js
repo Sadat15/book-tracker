@@ -4,17 +4,17 @@ const Book = db.books;
 // Create and Save a new book
 exports.create = (req, res) => {
   // Validate request
-  // if (!req.body.title) {
-  //   res.status(400).send({ message: "Title cannot be empty!" });
-  //   return;
-  // }
+  if (!req.body.title) {
+    res.status(400).send({ message: "Title cannot be empty!" });
+    return;
+  }
   // Create a book entry
   const book = new Book({
     title: req.body.title,
     description: req.body.description,
     completed: req.body.completed ? req.body.completed : false,
-    // startDate: req.body.startDate,
-    // endDate: req.body.endDate,
+    startDate: req.body.startDate,
+    endDate: req.body.endDate,
   });
 
   // Save the book in the database
