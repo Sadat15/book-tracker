@@ -13,6 +13,7 @@ exports.create = (req, res) => {
     title: req.body.title,
     description: req.body.description,
     completed: req.body.completed ? req.body.completed : false,
+    genre: req.body.genre,
     startDate: req.body.startDate,
     endDate: req.body.endDate,
   });
