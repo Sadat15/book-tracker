@@ -128,13 +128,6 @@ const BooksList = () => {
               {currentBook.completed ? "Completed" : "Incomplete"}
             </div>
 
-            <div>
-              <label>
-                <strong>id:</strong>
-              </label>{" "}
-              {currentBook.id}
-            </div>
-
             <Link
               to={"/books/" + currentBook.id}
               className="btn btn-sm btn-warning"

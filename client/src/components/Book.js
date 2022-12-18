@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import BookDataService from "../services/BookService";
+import "../App.css";
 
 const Book = (props) => {
   const { id } = useParams();
@@ -107,6 +108,18 @@ const Book = (props) => {
             </div>
 
             <div className="form-group">
+              <label htmlFor="genre">Genre</label>
+              <input
+                type="text"
+                className="form-control"
+                id="genre"
+                name="genre"
+                value={currentBook.genre}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="form-group">
               <label>
                 <strong>Status:</strong>
               </label>
@@ -114,17 +127,20 @@ const Book = (props) => {
             </div>
           </form>
 
-          <div className="form-group">
-            <label htmlFor="genre">Genre</label>
-            <input
-              type="text"
-              className="form-control"
-              id="genre"
-              name="genre"
-              value={currentBook.genre}
-              onChange={handleInputChange}
+          {/* 
+          <div>
+            <DropdownList
+              dataKey="id"
+              textField="color"
+              value={value}
+              onChange={(nextValue) => setValue(nextValue.id)}
+              data={[
+                { id: 1, color: "Red" },
+                { id: 2, color: "Yellow" },
+                { id: 3, color: "Blue" },
+              ]}
             />
-          </div>
+          </div> */}
 
           {currentBook.completed ? (
             <button
